@@ -86,9 +86,11 @@ export default class {
   }
 
   handleEditTicket(e, bill, bills) {
-    if (this.counter === undefined || this.id !== bill.id) this.counter = 0
-    if (this.id === undefined || this.id !== bill.id) this.id = bill.id
-    if (this.counter % 2 === 0) {
+	// ajout d'un contrôle sur le nom du fichier
+	if(!bill.fileName) bill.fileName = "";
+   if (this.counter === undefined || this.id !== bill.id) this.counter = 0
+   if (this.id === undefined || this.id !== bill.id) this.id = bill.id
+   if (this.counter % 2 === 0) {
       bills.forEach(b => {
         $(`#open-bill${b.id}`).css({ background: '#0D5AE5' })
       })
@@ -146,7 +148,8 @@ export default class {
     }
 
     bills.forEach(bill => {
-      $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
+      // il faut détacher l'event click avant de retacher
+      $(`#open-bill${bill.id}`).unbind('click').click((e) => this.handleEditTicket(e, bill, bills))
     })
 
     return bills
