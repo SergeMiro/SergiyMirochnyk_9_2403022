@@ -24,3 +24,8 @@ export const formatStatus = (status) => {
       return "Refused"
   }
 } 
+
+
+export const antiChrono = (bill1, bill2) => {
+	return bill1.date < bill2.date ? 1 : -1;  
+ };
