@@ -2,7 +2,25 @@
 P9 - Openclassroom
 
 
-Installez les packages npm (décrits dans `package.json`) :
+### Cloner la partie BACK-END du projet:
+```
+git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Back.git
+```
+
+### Installer les dépendances du projet :
+
+```
+npm install
+```
+
+### Lancer l'API :
+
+```
+npm run run:dev
+
+--------------------------------------------------------------------------------
+
+Installez les packages npm (décrits dans `package.json`) pour la partie FRONT-END :
 ```
 $ npm install
 ```
